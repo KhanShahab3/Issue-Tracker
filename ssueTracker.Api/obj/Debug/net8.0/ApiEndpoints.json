@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "comment",
-        "Type": "IssueTracker.Api.Models.Comments",
+        "Type": "IssueTracker.Api.DTOsModel.CreateCommentsDTO",
         "IsRequired": true
       }
     ],

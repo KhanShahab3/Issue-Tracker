@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IssueTracker.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251204205907_initail")]
+    [Migration("20251207114440_initail")]
     partial class initail
     {
         /// <inheritdoc />

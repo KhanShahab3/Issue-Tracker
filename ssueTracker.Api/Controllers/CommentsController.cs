@@ -1,4 +1,5 @@
-﻿using IssueTracker.Api.Models;
+﻿using IssueTracker.Api.DTOsModel;
+using IssueTracker.Api.Models;
 using IssueTracker.Api.Repositories;
 using IssueTracker.Api.Services;
 using Microsoft.AspNetCore.Http;
@@ -51,10 +52,10 @@ namespace IssueTracker.Api.Controllers
             return BadRequest();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateComment(Comments comment)
+        public async Task<IActionResult> CreateComment(CreateCommentsDTO comment)
         {
             var createComment = await _commentService.CreateComment(comment);
-            if (createComment != null)
+            if (createComment == null)
             {
 
                 return BadRequest();

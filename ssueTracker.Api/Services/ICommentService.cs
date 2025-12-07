@@ -1,4 +1,5 @@
-﻿using IssueTracker.Api.Models;
+﻿using IssueTracker.Api.DTOsModel;
+using IssueTracker.Api.Models;
 
 namespace IssueTracker.Api.Services
 {
@@ -6,7 +7,7 @@ namespace IssueTracker.Api.Services
     {
         Task<List<Comments>> GetAllComments();
         Task<Comments>GetCommentById(int id);
-        Task<Comments>CreateComment(Comments comment);
+        Task<CreateCommentsDTO>CreateComment(CreateCommentsDTO comment);
         Task<Comments> UpdateComment(Comments comment);
         Task<bool> DeleteComment(int id);
     }

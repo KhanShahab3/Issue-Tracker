@@ -53,17 +53,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Comments"
+                "$ref": "#/components/schemas/CreateCommentsDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Comments"
+                "$ref": "#/components/schemas/CreateCommentsDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Comments"
+                "$ref": "#/components/schemas/CreateCommentsDTO"
               }
             }
           }
@@ -524,6 +524,24 @@
           "createdAt": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCommentsDTO": {
+        "type": "object",
+        "properties": {
+          "issueId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

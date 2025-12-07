@@ -1,4 +1,5 @@
-﻿using IssueTracker.Api.Models;
+﻿using IssueTracker.Api.DTOsModel;
+using IssueTracker.Api.Models;
 using IssueTracker.Api.Repositories;
 
 namespace IssueTracker.Api.Services
@@ -20,9 +21,16 @@ namespace IssueTracker.Api.Services
             var comment=await _commentRepository.GetCommentById(id);    
             return comment;
         }
-        public async Task<Comments>CreateComment(Comments comment)
+        public async Task<CreateCommentsDTO> CreateComment(CreateCommentsDTO comment)
         {
-            await _commentRepository.CreateComment(comment);
+            var newComment = new Comments
+            {
+                IssueId = comment.IssueId,
+                UserId = comment.UserId,
+                Content = comment.Content,
+                CreatedAt = DateTime.UtcNow
+            };
+            await _commentRepository.CreateComment(newComment);
             return comment;
         }
         public async Task<Comments>UpdateComment(Comments comment)
